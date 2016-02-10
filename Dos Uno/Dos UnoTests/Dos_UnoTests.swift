@@ -21,8 +21,14 @@ class Dos_UnoTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
+    func generateDeck() {
+        var gameDeck:Deck = Deck()
+
+        gameDeck.generateDeck()
+
+        XCTAssert(gameDeck.deck.count == 108)
+
+        
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
