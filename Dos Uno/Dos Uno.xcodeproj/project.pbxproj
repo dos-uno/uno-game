@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500AEA1D1C68064600E98F03 /* deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500AEA1C1C68064600E98F03 /* deck.swift */; };
+		500AEA1E1C68064600E98F03 /* deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500AEA1C1C68064600E98F03 /* deck.swift */; };
 		509ECA501C61C1D600E1161E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509ECA4F1C61C1D600E1161E /* AppDelegate.swift */; };
 		509ECA521C61C1D600E1161E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 509ECA511C61C1D600E1161E /* GameScene.sks */; };
 		509ECA541C61C1D600E1161E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509ECA531C61C1D600E1161E /* GameScene.swift */; };
@@ -28,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		500AEA1C1C68064600E98F03 /* deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = deck.swift; sourceTree = "<group>"; };
 		509ECA4C1C61C1D600E1161E /* Dos Uno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dos Uno.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		509ECA4F1C61C1D600E1161E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509ECA511C61C1D600E1161E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -60,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		500AEA1B1C68062000E98F03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				500AEA1C1C68064600E98F03 /* deck.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		509ECA431C61C1D600E1161E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +92,7 @@
 		509ECA4E1C61C1D600E1161E /* Dos Uno */ = {
 			isa = PBXGroup;
 			children = (
+				500AEA1B1C68062000E98F03 /* Model */,
 				509ECA4F1C61C1D600E1161E /* AppDelegate.swift */,
 				509ECA511C61C1D600E1161E /* GameScene.sks */,
 				509ECA531C61C1D600E1161E /* GameScene.swift */,
@@ -204,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500AEA1D1C68064600E98F03 /* deck.swift in Sources */,
 				509ECA541C61C1D600E1161E /* GameScene.swift in Sources */,
 				509ECA561C61C1D600E1161E /* GameViewController.swift in Sources */,
 				509ECA501C61C1D600E1161E /* AppDelegate.swift in Sources */,
@@ -214,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500AEA1E1C68064600E98F03 /* deck.swift in Sources */,
 				509ECA691C61C1D600E1161E /* Dos_UnoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +411,7 @@
 				509ECA6F1C61C1D600E1161E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		509ECA701C61C1D600E1161E /* Build configuration list for PBXNativeTarget "Dos UnoTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +420,7 @@
 				509ECA721C61C1D600E1161E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
