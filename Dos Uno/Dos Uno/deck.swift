@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameplayKit
 
 enum Color {
     case red
@@ -39,15 +40,18 @@ enum Value:Int {
     case drawFour = 14
 
     static let allValues: [Value] = {
-        return (0..<14).map { Value(rawValue: $0)! }
+        return (0...14).map { Value(rawValue: $0)! }
     }()
 }
 
-struct Card {
+class Card {
     var color:Color
     var value:Value
 
-
+    init(color:Color, value:Value) {
+        self.color = color
+        self.value = value
+    }
 }
 
 extension Int {
@@ -58,39 +62,38 @@ extension Int {
     }
 }
 
-struct Deck {
+func generateDeck() -> [Card] {
     var deck:[Card] = []
-    mutating func generateDeck() {
-        assert(deck.isEmpty == true)
+
+    assert(deck.isEmpty == true)
 
 
-        for value in Value.allValues {
+    for value in Value.allValues {
 
-            switch value {
-            case Value.zero:
+        switch value {
+        case Value.zero:
+            deck.append(Card(color: .red, value: value))
+            deck.append(Card(color: .blue, value: value))
+            deck.append(Card(color: .green, value: value))
+            deck.append(Card(color: .yellow, value: value))
+        case Value.wild:
+            4.times {
+                deck.append(Card(color: .all, value: value))
+            }
+        case Value.drawFour:
+            4.times {
+                deck.append(Card(color: .all, value: value))
+            }
+            // this is 1 - 9, skip, drawTwo, reverse
+        default:
+            2.times {
                 deck.append(Card(color: .red, value: value))
                 deck.append(Card(color: .blue, value: value))
                 deck.append(Card(color: .green, value: value))
                 deck.append(Card(color: .yellow, value: value))
-            case Value.wild:
-                4.times {
-                    self.deck.append(Card(color: .all, value: value))
-                }
-            case Value.drawFour:
-                4.times {
-                    self.deck.append(Card(color: .all, value: value))
-                }
-                // this is 1 - 9, skip, drawTwo, reverse
-            default:
-                2.times {
-                    self.deck.append(Card(color: .red, value: value))
-                    self.deck.append(Card(color: .blue, value: value))
-                    self.deck.append(Card(color: .green, value: value))
-                    self.deck.append(Card(color: .yellow, value: value))
-                }
             }
         }
     }
+    return GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(deck) as! [Card] // this cast is fine because I put an array of cards in, there's no way to get anything not an array of cards out.
+
 }
-
-

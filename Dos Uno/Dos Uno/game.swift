@@ -27,7 +27,7 @@ struct User {
 }
 
 struct Round {
-    var deck:Deck
+    var deck:[Card]
     var discard:[Card]
     var source:[Card]
 }
@@ -35,4 +35,11 @@ struct Round {
 struct Game {
     var users:[User]
     var round:Round
+
+    mutating func newRound() {
+        var deck = generateDeck()
+        let discard = [deck.removeFirst()]
+        let source = deck
+        round = Round(deck: deck, discard: discard, source: source)
+    }
 }

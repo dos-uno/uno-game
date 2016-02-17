@@ -21,12 +21,11 @@ class Dos_UnoTests: XCTestCase {
         super.tearDown()
     }
     
-    func generateDeck() {
-        var gameDeck:Deck = Deck()
+    func testDeckGeneration() {
+        let gameDeck:[Card] = generateDeck()
 
-        gameDeck.generateDeck()
-
-        XCTAssert(gameDeck.deck.count == 108)
+        XCTAssert(gameDeck.count == 108)
+        // we should probably sort the array we get back & make sure all hte right cards are here, as part of this test, too.
 
         
         // Use XCTAssert and related functions to verify your tests produce the correct results.
