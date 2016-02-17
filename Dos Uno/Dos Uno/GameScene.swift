@@ -12,12 +12,12 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         // Set background color of game board
-        self.backgroundColor = UIColor(red: 0x00, green: 0xFF, blue: 0x00, alpha: 1)
+        self.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1)
         
-        let redZeroSprite = SKSpriteNode(imageNamed:"Red_0")
+        let redZeroSprite = SKSpriteNode(imageNamed:"red0")
         
-        redZeroSprite.xScale = 0.6
-        redZeroSprite.yScale = 0.6
+        redZeroSprite.xScale = 0.2
+        redZeroSprite.yScale = 0.2
         redZeroSprite.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         
         self.addChild(redZeroSprite)
