@@ -1,4 +1,4 @@
-Gleaned from http://www.unorules.com, http://www.wonkavator.com/uno/unorules.html, https://en.wikipedia.org/wiki/Uno_(card_game) and then heavily edited.
+ Gleaned from http://www.unorules.com, http://www.wonkavator.com/uno/unorules.html, https://en.wikipedia.org/wiki/Uno_(card_game) and then heavily edited.
 # Uno
 
 ## Official rules
