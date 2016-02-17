@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		500AEA1D1C68064600E98F03 /* deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500AEA1C1C68064600E98F03 /* deck.swift */; };
 		500AEA1E1C68064600E98F03 /* deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500AEA1C1C68064600E98F03 /* deck.swift */; };
+		500AEA201C73E7BE00E98F03 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500AEA1F1C73E7BE00E98F03 /* game.swift */; };
+		500AEA211C73E7BE00E98F03 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500AEA1F1C73E7BE00E98F03 /* game.swift */; };
 		509ECA501C61C1D600E1161E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509ECA4F1C61C1D600E1161E /* AppDelegate.swift */; };
 		509ECA521C61C1D600E1161E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 509ECA511C61C1D600E1161E /* GameScene.sks */; };
 		509ECA541C61C1D600E1161E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509ECA531C61C1D600E1161E /* GameScene.swift */; };
@@ -31,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		500AEA1C1C68064600E98F03 /* deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = deck.swift; sourceTree = "<group>"; };
+		500AEA1F1C73E7BE00E98F03 /* game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
 		509ECA4C1C61C1D600E1161E /* Dos Uno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dos Uno.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		509ECA4F1C61C1D600E1161E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509ECA511C61C1D600E1161E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				500AEA1C1C68064600E98F03 /* deck.swift */,
+				500AEA1F1C73E7BE00E98F03 /* game.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -218,6 +222,7 @@
 			files = (
 				500AEA1D1C68064600E98F03 /* deck.swift in Sources */,
 				509ECA541C61C1D600E1161E /* GameScene.swift in Sources */,
+				500AEA201C73E7BE00E98F03 /* game.swift in Sources */,
 				509ECA561C61C1D600E1161E /* GameViewController.swift in Sources */,
 				509ECA501C61C1D600E1161E /* AppDelegate.swift in Sources */,
 			);
@@ -227,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500AEA211C73E7BE00E98F03 /* game.swift in Sources */,
 				500AEA1E1C68064600E98F03 /* deck.swift in Sources */,
 				509ECA691C61C1D600E1161E /* Dos_UnoTests.swift in Sources */,
 			);
