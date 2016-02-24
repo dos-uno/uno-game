@@ -15,6 +15,10 @@ enum Color: Int, Comparable {
     case green = 2
     case yellow = 3
     case all = 4
+
+    static let allValues: [Color] = {
+        return (0...4).map { Color(rawValue: $0)! }
+    }()
 }
 
 func ==(color1: Color, color2: Color) -> Bool {
