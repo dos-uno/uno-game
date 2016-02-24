@@ -9,19 +9,27 @@
 import Foundation
 import GameplayKit
 
-enum Color {
-    case red
-    case blue
-    case green
-    case yellow
-    case all
+enum Color:Int, Comparable {
+    case red = 0
+    case blue = 1
+    case green = 2
+    case yellow = 3
+    case all = 4
+}
+
+func ==(color1: Color, color2: Color) -> Bool {
+    return color1.rawValue == color2.rawValue
+}
+
+func <(color1: Color, color2: Color) -> Bool {
+    return color1.rawValue < color2.rawValue
 }
 
 /*
 The deck consists of 108 cards, of which there are twenty-five of each color (red, green, blue, and yellow), each color having two of each rank except zero (and 1 each of zeros). The ranks in each color are zero to nine, "Skip", "Draw Two" and "Reverse" (the last three of these being classified as "action cards"). In addition, the deck contains four each of "Wild" and "Wild Draw Four" cards.
 
 */
-enum Value:Int {
+enum Value:Int, Comparable {
     case zero = 0
     case one = 1
     case two = 2
@@ -42,6 +50,14 @@ enum Value:Int {
     static let allValues: [Value] = {
         return (0...14).map { Value(rawValue: $0)! }
     }()
+}
+
+func ==(value1: Value, value2: Value) -> Bool {
+    return value1.rawValue == value2.rawValue
+}
+
+func <(value1: Value, value2: Value) -> Bool {
+    return value1.rawValue < value2.rawValue
 }
 
 class Card {
