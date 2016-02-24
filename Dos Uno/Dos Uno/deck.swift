@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-enum Color:Int, Comparable {
+enum Color: Int, Comparable {
     case red = 0
     case blue = 1
     case green = 2
@@ -29,7 +29,7 @@ func <(color1: Color, color2: Color) -> Bool {
 The deck consists of 108 cards, of which there are twenty-five of each color (red, green, blue, and yellow), each color having two of each rank except zero (and 1 each of zeros). The ranks in each color are zero to nine, "Skip", "Draw Two" and "Reverse" (the last three of these being classified as "action cards"). In addition, the deck contains four each of "Wild" and "Wild Draw Four" cards.
 
 */
-enum Value:Int, Comparable {
+enum Value: Int, Comparable {
     case zero = 0
     case one = 1
     case two = 2
@@ -60,9 +60,9 @@ func <(value1: Value, value2: Value) -> Bool {
     return value1.rawValue < value2.rawValue
 }
 
-class Card:CustomDebugStringConvertible {
-    var color:Color
-    var value:Value
+class Card: CustomDebugStringConvertible {
+    var color: Color
+    var value: Value
     var debugDescription: String {
         get {
             return "\(color) \(value)"
@@ -70,7 +70,7 @@ class Card:CustomDebugStringConvertible {
 
     }
 
-    init(color:Color, value:Value) {
+    init(color: Color, value: Value) {
         self.color = color
         self.value = value
     }
@@ -85,7 +85,7 @@ extension Int {
 }
 
 func generateDeck() -> [Card] {
-    var deck:[Card] = []
+    var deck: [Card] = []
 
     assert(deck.isEmpty == true)
 
