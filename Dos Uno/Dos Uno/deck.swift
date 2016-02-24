@@ -60,9 +60,15 @@ func <(value1: Value, value2: Value) -> Bool {
     return value1.rawValue < value2.rawValue
 }
 
-class Card {
+class Card:CustomDebugStringConvertible {
     var color:Color
     var value:Value
+    var debugDescription: String {
+        get {
+            return "\(color) \(value)"
+        }
+
+    }
 
     init(color:Color, value:Value) {
         self.color = color
