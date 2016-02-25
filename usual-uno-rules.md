@@ -19,13 +19,15 @@ Play proceeds clockwise around the table.
 
 Action and Wild cards have the following effects:
 
-| Card | Effect when played from hand | Effect as first discard |
-|--|--|--|
-|Skip|Next player in sequence misses a turn|Player to dealer's left misses a turn|
-|Draw Two|Next player in sequence draws two cards and misses a turn|Player to dealer's left draws two cards and misses a turn|
-|Reverse|Order of play switches directions (clockwise to counterclockwise, and vice versa)|Dealer plays first; play proceeds counterclockwise|
-|Wild|Player declares next color to be matched (may be used on any turn even if the player has matching color)|Player to dealer's left declares first color to be matched, then plays normally|
-|Wild Draw Four|Player declares next color to be matched; next player in sequence draws four cards and loses a turn. May be legally played only if the player has no cards of the current color; Wild cards and cards with the same number or symbol in a different color do not count|Return card to deck, shuffle, flip top card to start discard pile|
+<table>
+<tr><th>Card</th><th>Effect when played from hand</th><th>Effect as first discard</th></tr>
+
+<tr><td>Skip</td><td>Next player in sequence misses a turn</td><td>Player to dealer's left misses a turn|</td></tr>
+<tr><td>Draw Two</td><td>Next player in sequence draws two cards and misses a turn</td><td>Player to dealer's left draws two cards and misses a turn</td></tr>
+<tr><td>Reverse</td><td>Order of play switches directions (clockwise to counterclockwise, and vice versa)</td><td>Dealer plays first; play proceeds counterclockwise</td></tr>
+<tr><td>Wild</td><td>Player declares next color to be matched (may be used on any turn even if the player has matching color)</td><td>Player to dealer's left declares first color to be matched, then plays normally</td></tr>
+<tr><td>Wild Draw Four</td><td>Player declares next color to be matched; next player in sequence draws four cards and loses a turn. May be legally played only if the player has no cards of the current color; Wild cards and cards with the same number or symbol in a different color do not count</td><td>Return card to deck, shuffle, flip top card to start discard pile</td></tr>
+</table>
 
 * A player may draw a card from the deck even if that player has a playable card.
 * If a player chooses to draw a card and the drawn card is playable, the player has the option of either keeping it or playing it immediately (as part of that turn).
