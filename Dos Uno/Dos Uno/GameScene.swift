@@ -20,6 +20,8 @@ class GameScene: SKScene {
         redZeroSprite.yScale = 0.2
         redZeroSprite.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         
+        
+        
         self.addChild(redZeroSprite)
     }
     

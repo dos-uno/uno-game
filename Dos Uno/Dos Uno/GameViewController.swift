@@ -10,11 +10,20 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
-
+    // MARK: Properties
+    @IBOutlet weak var drawPileButton: UIButton!
+    @IBOutlet weak var discardPileButton: UIButton!
+    @IBOutlet weak var challengeUnoButton: UIButton!
+    @IBOutlet weak var declareUnoButton: UIButton!
+    
+    var scene: GameScene?
+    
+    // MARK: Implementation
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let scene = GameScene(fileNamed:"GameScene") {
+        scene = GameScene(fileNamed:"GameScene")
+        
+        if let localScene = scene {
             // Configure the view.
             let skView = self.view as! SKView
             skView.showsFPS = true
@@ -24,7 +33,7 @@ class GameViewController: UIViewController {
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
+            localScene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
         }
@@ -49,5 +58,9 @@ class GameViewController: UIViewController {
 
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    @IBAction func challengeUnoAction(sender: UIButton) {
+        
     }
 }
