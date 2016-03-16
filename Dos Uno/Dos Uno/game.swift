@@ -30,16 +30,49 @@ struct Round {
     var deck:[Card]
     var discard:[Card]
     var source:[Card]
+    let winner:User?
 }
 
 struct Game {
     var users:[User]
-    var round:Round
+    var round:Round?
 
     mutating func newRound() {
+        guard round != nil else {
+            self.completeRound();
+            return;
+        }
         var deck = generateDeck()
         let discard = [deck.removeFirst()]
         let source = deck
-        round = Round(deck: deck, discard: discard, source: source)
+        round = Round(deck: deck, discard: discard, source: source, winner: nil)
+    }
+
+    func winner() -> User? {
+        for user in users {
+            if user.score >= 500 {
+                return user;
+            }
+        }
+
+        return nil;
+    }
+
+    func handTotal(hand:[Card]) -> Int {
+        var total = 0
+        for card in hand {
+            total += card.value.rawValue
+        }
+        return total
+    }
+
+    func completeRound() {
+        if let localRound = round, var winner = localRound.winner {
+            var roundScore = 0
+            for user in users {
+                roundScore += handTotal(user.hand)
+            }
+            winner.score += roundScore
+        }
     }
 }
