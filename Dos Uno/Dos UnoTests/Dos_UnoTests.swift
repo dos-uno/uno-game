@@ -75,8 +75,8 @@ class Dos_UnoTests: XCTestCase {
 
     func newGame() -> Game {
         var users:[User] = []
-        users.append(User(name: "Evan", score: 0, hand: nil))
-        users.append(User(name: "Rachael", score: 0, hand: nil))
+        users.append(User(name: "Evan", score: 0, hand: []))
+        users.append(User(name: "Rachael", score: 0, hand: []))
         let game:Game = Game(users: users, round: nil)
         return game
     }
@@ -86,9 +86,26 @@ class Dos_UnoTests: XCTestCase {
     }
 
     func testNewRound() {
-        var game:Game = newGame()
+        var game = newGame()
         game.newRound()
         XCTAssertNotNil(game.round)
+        for user in game.users {
+            XCTAssertNotNil(user.hand.count == 7) // if the above assertion fails, the result of this won't matter.
+        }
+    }
+
+    func testWinnerDetection() {
+        var game = newGame()
+        game.users[0].score = 50
+        game.users[1].score = 20
+        XCTAssertNil(game.winner())
+
+        game.users[0].score = 550
+
+        if let winner = game.winner() {
+            XCTAssert(winner == game.users[0])
+        }
+
     }
 
     func testFinishRound() {

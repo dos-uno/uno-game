@@ -18,12 +18,16 @@ import Foundation
 // * there will be a deck of face-down cards shuffled
 // * there will be a discard stack of face-up cards to play on.
 
-struct User {
+struct User: Equatable {
     var name:String
     var score:Int
     // icon?
 
-    var hand:[Card]?
+    var hand:[Card]
+}
+
+func ==(user1: User, user2: User) -> Bool {
+    return user1.name == user2.name && user1.score == user2.score
 }
 
 struct Round {
@@ -44,8 +48,14 @@ struct Game {
         }
         var deck = generateDeck()
         let discard = [deck.removeFirst()]
+        for var user in users {
+            for _ in 1...7 {
+                user.hand.append(deck.removeFirst())
+            }
         let source = deck
         round = Round(deck: deck, discard: discard, source: source, winner: nil)
+
+        }
     }
 
     func winner() -> User? {
