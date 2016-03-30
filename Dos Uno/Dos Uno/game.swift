@@ -23,7 +23,7 @@ struct User {
     var score:Int
     // icon?
 
-    var hand:[Card]
+    var hand:[Card]?
 }
 
 struct Round {
@@ -38,7 +38,7 @@ struct Game {
     var round:Round?
 
     mutating func newRound() {
-        guard round != nil else {
+        guard round == nil else {
             self.completeRound();
             return;
         }
@@ -58,9 +58,12 @@ struct Game {
         return nil;
     }
 
-    func handTotal(hand:[Card]) -> Int {
+    func handTotal(hand:[Card]?) -> Int {
+        guard hand != nil else {
+            return 0
+        }
         var total = 0
-        for card in hand {
+        for card in hand! {
             total += card.value.rawValue
         }
         return total

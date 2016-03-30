@@ -71,10 +71,30 @@ class Dos_UnoTests: XCTestCase {
                 gameDeck = removeAndCompareFrom(gameDeck, color: color, value: .drawFour, count: 4)
             }
         }
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
+
+    func newGame() -> Game {
+        var users:[User] = []
+        users.append(User(name: "Evan", score: 0, hand: nil))
+        users.append(User(name: "Rachael", score: 0, hand: nil))
+        let game:Game = Game(users: users, round: nil)
+        return game
+    }
+
+    func testNewGame() {
+        XCTAssertNotNil(newGame())
+    }
+
+    func testNewRound() {
+        var game:Game = newGame()
+        game.newRound()
+        XCTAssertNotNil(game.round)
+    }
+
+    func testFinishRound() {
+        XCTAssert(false, "cannot write this test till we have a way to play some hands")
+    }
+
 //    func testPerformanceExample() {
 //        // This is an example of a performance test case.
 //        self.measureBlock {
