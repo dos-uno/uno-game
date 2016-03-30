@@ -31,7 +31,6 @@ func ==(user1: User, user2: User) -> Bool {
 }
 
 struct Round {
-    var deck:[Card]
     var discard:[Card]
     var source:[Card]
     let winner:User?
@@ -46,14 +45,14 @@ struct Game {
             self.completeRound();
             return;
         }
-        var deck = generateDeck()
-        let discard = [deck.removeFirst()]
+
+        var source = generateDeck()
+        let discard = [source.removeFirst()]
         for var user in users {
             for _ in 1...7 {
-                user.hand.append(deck.removeFirst())
+                user.hand.append(source.removeFirst())
             }
-        let source = deck
-        round = Round(deck: deck, discard: discard, source: source, winner: nil)
+        round = Round(discard: discard, source: source, winner: nil)
 
         }
     }
