@@ -18,12 +18,19 @@ import Foundation
 // * there will be a deck of face-down cards shuffled
 // * there will be a discard stack of face-up cards to play on.
 
-struct User: Equatable {
-    var name:String
-    var score:Int
+class User: Equatable {
+    var name:String = "Player"
+    var score:Int = 0
     // icon?
 
-    var hand:[Card]
+    var hand:[Card] = []
+    
+    init (name: String, score: Int, hand: [Card]) {
+        self.name = name
+        self.score = score
+        self.hand = hand
+        
+    }
 }
 
 func ==(user1: User, user2: User) -> Bool {
