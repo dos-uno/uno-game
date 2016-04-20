@@ -22,13 +22,12 @@ class GameScene: SKScene {
         let redZeroSprite = CardSprite()
         
         //Trying to access a card belonging to a game
-        var localUser = User(name: "Rachael", score: 0, hand: [])
+        let localUser = User(name: "Rachael", score: 0, hand: [])
         var currentGame = Game(users: [localUser], round: nil)
         
         currentGame.newRound()
         
-        redZeroSprite.card = localUser.hand[0]
-        
+        redZeroSprite.card = currentGame.users[0].hand[0]
         
         redZeroSprite.xScale = 0.2
         redZeroSprite.yScale = 0.2
