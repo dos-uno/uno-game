@@ -8,19 +8,32 @@
 
 import SpriteKit
 
+class CardSprite: SKSpriteNode {
+    var card: Card?
+}
+
 class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         // Set background color of game board
-        self.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1)
+        self.backgroundColor = UIColor(red:0.05, green:0.67, blue:0.15, alpha:1.00)
         
-        let redZeroSprite = SKSpriteNode(imageNamed:"red0")
+        
+        let redZeroSprite = CardSprite()
+        
+        //Trying to access a card belonging to a game
+        var localUser = User(name: "Rachael", score: 0, hand: [])
+        var currentGame = Game(users: [localUser], round: nil)
+        
+        currentGame.newRound()
+        
+        redZeroSprite.card = localUser.hand[0]
+        
         
         redZeroSprite.xScale = 0.2
         redZeroSprite.yScale = 0.2
         redZeroSprite.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
-        
-        
+ 
         
         self.addChild(redZeroSprite)
     }
