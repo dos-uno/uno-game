@@ -37,17 +37,27 @@ func ==(user1: User, user2: User) -> Bool {
     return user1.name == user2.name && user1.score == user2.score
 }
 
-struct Round {
+class Round {
     var discard:[Card]
     var source:[Card]
-    let winner:User?
+    let winner:User? = nil
+
+    init (discard: [Card], source: [Card]) {
+        self.discard = discard
+        self.source = source
+    }
 }
 
-struct Game {
+class Game {
     var users:[User]
     var round:Round?
 
-    mutating func newRound() {
+    init (users: [User], round: Round? = nil) {
+        self.users = users
+        self.round = round
+    }
+
+    func newRound() {
         guard round == nil else {
             self.completeRound();
             return;
@@ -55,11 +65,11 @@ struct Game {
 
         var source = generateDeck()
         let discard = [source.removeFirst()]
-        for var user in users {
+        for user in users {
             for _ in 1...7 {
                 user.hand.append(source.removeFirst())
             }
-        round = Round(discard: discard, source: source, winner: nil)
+            round = Round(discard: discard, source: source)
 
         }
     }
@@ -86,7 +96,7 @@ struct Game {
     }
 
     func completeRound() {
-        if let localRound = round, var winner = localRound.winner {
+        if let localRound = round, winner = localRound.winner {
             var roundScore = 0
             for user in users {
                 roundScore += handTotal(user.hand)

@@ -23,7 +23,7 @@ class GameScene: SKScene {
         
         //Trying to access a card belonging to a game
         let localUser = User(name: "Rachael", score: 0, hand: [])
-        var currentGame = Game(users: [localUser], round: nil)
+        let currentGame = Game(users: [localUser], round: nil)
         
         currentGame.newRound()
         
