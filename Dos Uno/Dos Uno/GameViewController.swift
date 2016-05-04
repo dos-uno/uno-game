@@ -23,6 +23,7 @@ class GameViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         user = User(name: "", score: 0, hand: [])
         game = Game(users:[user])
+        game.newRound()
         super.init(coder: aDecoder)
     }
 
