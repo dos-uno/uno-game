@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		500AEA1D1C68064600E98F03 /* deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500AEA1C1C68064600E98F03 /* deck.swift */; };
 		500AEA201C73E7BE00E98F03 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500AEA1F1C73E7BE00E98F03 /* game.swift */; };
+		504B89451CD99BA7003CF716 /* UserSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504B89441CD99BA7003CF716 /* UserSetupViewController.swift */; };
 		509ECA501C61C1D600E1161E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509ECA4F1C61C1D600E1161E /* AppDelegate.swift */; };
 		509ECA521C61C1D600E1161E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 509ECA511C61C1D600E1161E /* GameScene.sks */; };
 		509ECA541C61C1D600E1161E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509ECA531C61C1D600E1161E /* GameScene.swift */; };
@@ -32,11 +33,12 @@
 /* Begin PBXFileReference section */
 		500AEA1C1C68064600E98F03 /* deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = deck.swift; sourceTree = "<group>"; };
 		500AEA1F1C73E7BE00E98F03 /* game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
+		504B89441CD99BA7003CF716 /* UserSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSetupViewController.swift; path = "Dos Uno/UserSetupViewController.swift"; sourceTree = "<group>"; };
 		509ECA4C1C61C1D600E1161E /* Dos Uno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dos Uno.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		509ECA4F1C61C1D600E1161E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509ECA511C61C1D600E1161E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		509ECA531C61C1D600E1161E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		509ECA551C61C1D600E1161E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		509ECA551C61C1D600E1161E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = "Dos Uno/GameViewController.swift"; sourceTree = "<group>"; };
 		509ECA581C61C1D600E1161E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		509ECA5A1C61C1D600E1161E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		509ECA5D1C61C1D600E1161E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +75,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		504B89461CD99BBB003CF716 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				504B89441CD99BA7003CF716 /* UserSetupViewController.swift */,
+				509ECA551C61C1D600E1161E /* GameViewController.swift */,
+			);
+			name = "View Controllers";
+			path = ..;
+			sourceTree = "<group>";
+		};
 		509ECA431C61C1D600E1161E = {
 			isa = PBXGroup;
 			children = (
@@ -94,11 +106,11 @@
 		509ECA4E1C61C1D600E1161E /* Dos Uno */ = {
 			isa = PBXGroup;
 			children = (
+				504B89461CD99BBB003CF716 /* View Controllers */,
 				500AEA1B1C68062000E98F03 /* Model */,
 				509ECA4F1C61C1D600E1161E /* AppDelegate.swift */,
 				509ECA511C61C1D600E1161E /* GameScene.sks */,
 				509ECA531C61C1D600E1161E /* GameScene.swift */,
-				509ECA551C61C1D600E1161E /* GameViewController.swift */,
 				509ECA571C61C1D600E1161E /* Main.storyboard */,
 				509ECA5A1C61C1D600E1161E /* Assets.xcassets */,
 				509ECA5C1C61C1D600E1161E /* LaunchScreen.storyboard */,
@@ -219,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				500AEA1D1C68064600E98F03 /* deck.swift in Sources */,
+				504B89451CD99BA7003CF716 /* UserSetupViewController.swift in Sources */,
 				509ECA541C61C1D600E1161E /* GameScene.swift in Sources */,
 				500AEA201C73E7BE00E98F03 /* game.swift in Sources */,
 				509ECA561C61C1D600E1161E /* GameViewController.swift in Sources */,

@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--User Setup View Controller-->
         <scene sceneID="E3k-cc-JFA">
             <objects>
-                <viewController id="TD3-aF-aF4" sceneMemberID="viewController">
+                <viewController id="TD3-aF-aF4" customClass="UserSetupViewController" customModule="Dos_Uno" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZXM-Un-kPw"/>
                         <viewControllerLayoutGuide type="bottom" id="F5W-EV-ByM"/>
@@ -50,6 +50,9 @@
                             <constraint firstItem="WbP-NZ-eqE" firstAttribute="centerX" secondItem="dva-Cl-UV0" secondAttribute="centerX" id="fZE-th-fq6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userName" destination="kw5-J4-WlC" id="2as-Ff-itu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ayd-Hs-9C3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

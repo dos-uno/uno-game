@@ -70,7 +70,6 @@ class Game {
                 user.hand.append(source.removeFirst())
             }
             round = Round(discard: discard, source: source)
-
         }
     }
 

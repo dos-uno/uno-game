@@ -17,7 +17,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var declareUnoButton: UIButton!
     
     var scene: GameScene?
-    
+    var user:User = User(name: "", score: 0, hand: [])
+
     // MARK: Implementation
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,4 +64,5 @@ class GameViewController: UIViewController {
     @IBAction func challengeUnoAction(sender: UIButton) {
         
     }
+
 }
