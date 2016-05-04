@@ -67,37 +67,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMg-0c-aK5">
-                                <rect key="frame" x="279" y="276" width="64" height="30"/>
-                                <state key="normal" title="Draw Pile"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W21-xw-9OX">
-                                <rect key="frame" x="193" y="276" width="53" height="30"/>
-                                <state key="normal" title="Discard"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rjf-Pq-W5y">
-                                <rect key="frame" x="403" y="251" width="101" height="30"/>
-                                <state key="normal" title="Challenge Uno"/>
-                                <connections>
-                                    <action selector="challengeUnoAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fWr-yt-t4E"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubr-6m-eAw">
-                                <rect key="frame" x="411" y="289" width="85" height="30"/>
-                                <state key="normal" title="Declare Uno"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tJN-tN-qVi">
+                                <rect key="frame" x="169" y="244" width="263" height="112"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAf-6a-NYl">
+                                        <rect key="frame" x="0.0" y="0.0" width="73" height="112"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="112" id="k73-sQ-RUJ"/>
+                                            <constraint firstAttribute="width" constant="73" id="zY0-85-62V"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaG-V8-RAp">
+                                        <rect key="frame" x="81" y="0.0" width="73" height="112"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2zc-NX-EaJ">
+                                        <rect key="frame" x="162" y="26" width="101" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rjf-Pq-W5y">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="30"/>
+                                                <state key="normal" title="Challenge Uno"/>
+                                                <connections>
+                                                    <action selector="challengeUnoAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fWr-yt-t4E"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubr-6m-eAw">
+                                                <rect key="frame" x="0.0" y="30" width="101" height="30"/>
+                                                <state key="normal" title="Declare Uno"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BaG-V8-RAp" firstAttribute="height" secondItem="RAf-6a-NYl" secondAttribute="height" id="ibM-KY-5pc"/>
+                                    <constraint firstItem="BaG-V8-RAp" firstAttribute="width" secondItem="RAf-6a-NYl" secondAttribute="width" id="xyn-Pb-zmI"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tJN-tN-qVi" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="hod-zL-iBy"/>
+                            <constraint firstItem="tJN-tN-qVi" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="nsw-O8-YkZ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="challengeUnoButton" destination="Rjf-Pq-W5y" id="3gw-Lr-Xjg"/>
                         <outlet property="declareUnoButton" destination="ubr-6m-eAw" id="Yvs-QY-e55"/>
-                        <outlet property="discardPileButton" destination="W21-xw-9OX" id="Hh4-SU-j7v"/>
-                        <outlet property="drawPileButton" destination="wMg-0c-aK5" id="Ysu-wq-cgt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="399" y="362"/>
         </scene>
     </scenes>
 </document>
