@@ -11,8 +11,8 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     // MARK: Properties
-    @IBOutlet weak var drawPileButton: UIButton!
-    @IBOutlet weak var discardPileButton: UIButton!
+    @IBOutlet weak var drawPile: UIView!
+    @IBOutlet weak var discardPile: UIView!
     @IBOutlet weak var challengeUnoButton: UIButton!
     @IBOutlet weak var declareUnoButton: UIButton!
     

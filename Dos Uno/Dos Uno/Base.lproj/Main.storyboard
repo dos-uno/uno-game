@@ -114,11 +114,13 @@
                     <connections>
                         <outlet property="challengeUnoButton" destination="Rjf-Pq-W5y" id="3gw-Lr-Xjg"/>
                         <outlet property="declareUnoButton" destination="ubr-6m-eAw" id="Yvs-QY-e55"/>
+                        <outlet property="discardPile" destination="RAf-6a-NYl" id="BiT-zy-kbL"/>
+                        <outlet property="drawPile" destination="BaG-V8-RAp" id="UrE-BE-Zvo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="399" y="362"/>
+            <point key="canvasLocation" x="379" y="285"/>
         </scene>
     </scenes>
 </document>
