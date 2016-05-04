@@ -17,7 +17,14 @@ class GameViewController: UIViewController {
     @IBOutlet weak var declareUnoButton: UIButton!
     
     var scene: GameScene?
-    var user:User = User(name: "", score: 0, hand: [])
+    var user:User
+    var game:Game
+
+    required init?(coder aDecoder: NSCoder) {
+        user = User(name: "", score: 0, hand: [])
+        game = Game(users:[user])
+        super.init(coder: aDecoder)
+    }
 
     // MARK: Implementation
     override func viewDidLoad() {
