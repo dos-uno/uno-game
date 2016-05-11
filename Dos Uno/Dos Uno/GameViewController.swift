@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, SKSceneDelegate {
     // MARK: Properties
     @IBOutlet weak var drawPile: UIView!
     @IBOutlet weak var discardPile: UIView!
@@ -26,26 +26,32 @@ class GameViewController: UIViewController {
         game.newRound()
         super.init(coder: aDecoder)
     }
+    
 
     // MARK: Implementation
     override func viewDidLoad() {
         super.viewDidLoad()
         scene = GameScene(fileNamed:"GameScene")
         
-        if let localScene = scene {
-            // Configure the view.
-            let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            localScene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
+        guard let scene = scene else {
+            return 
         }
+
+        scene.delegate = self
+        // Configure the view.
+        let skView = self.view as! SKView
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        
+        /* Sprite Kit applies additional optimizations to improve rendering performance */
+        skView.ignoresSiblingOrder = true
+        
+        /* Set the scale mode to scale to fit the window */
+        scene.scaleMode = .AspectFill
+        
+        skView.presentScene(scene)
+        
+        scene.backgroundColor = UIColor(red:0.05, green:0.67, blue:0.15, alpha:1.00)
     }
 
     override func shouldAutorotate() -> Bool {
