@@ -52,6 +52,8 @@ class GameViewController: UIViewController, SKSceneDelegate {
         skView.presentScene(scene)
         
         scene.backgroundColor = UIColor(red:0.05, green:0.67, blue:0.15, alpha:1.00)
+        
+        updateHand()
     }
 
     override func shouldAutorotate() -> Bool {
@@ -78,5 +80,22 @@ class GameViewController: UIViewController, SKSceneDelegate {
     @IBAction func challengeUnoAction(sender: UIButton) {
         
     }
+    
+    func updateHand() {
+        var cardSprites: [SKSpriteNode] = []
+        var position: Int = 0
+        guard let scene = scene else {
+            return
+        }
+        for card in user.hand {
+            let cardName:String = "\(card.color)\(card.value)"
+            cardSprites.append(SKSpriteNode(imageNamed:cardName))
+        }
+        for sprite in cardSprites {
+            
+            scene.addChild(sprite)
+        }
+    }
+    
 
 }

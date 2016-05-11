@@ -44,12 +44,12 @@ enum Value: Int, Comparable {
     case seven = 7
     case eight = 8
     case nine = 9
-    case skip = 10
-    case drawTwo = 11
-    case reverse = 12
+    case Skip = 10
+    case DrawTwo = 11
+    case Reverse = 12
 
-    case wild = 13
-    case drawFour = 14
+    case Wild = 13
+    case DrawFour = 14
 
     static let allValues: [Value] = {
         return (0...14).map { Value(rawValue: $0)! }
@@ -102,11 +102,11 @@ func generateDeck() -> [Card] {
             deck.append(Card(color: .blue, value: value))
             deck.append(Card(color: .green, value: value))
             deck.append(Card(color: .yellow, value: value))
-        case Value.wild:
+        case Value.Wild:
             4.times {
                 deck.append(Card(color: .all, value: value))
             }
-        case Value.drawFour:
+        case Value.DrawFour:
             4.times {
                 deck.append(Card(color: .all, value: value))
             }
